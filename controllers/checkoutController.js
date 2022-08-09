@@ -137,6 +137,8 @@ exports.FinalizarCompra = async(req, res, next) => {
 
     if (Datos.status == 'null') {
         res.redirect('/');
+        preference.items = [];
+        console.log(preference.items);
         return next();
     }
 
