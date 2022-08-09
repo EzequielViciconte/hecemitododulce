@@ -19,13 +19,14 @@ const DivCarrito = document.querySelector('.CarritoContenido');
 // Funciones 
 function agregarClickCarrito (e) {
     const UrlActual = window.location.href;
+    const UrlLocal = window.location.origin;
     const ProductoAct  = window.location.pathname
     const ProductNombre = ProductoAct.replace('/Tienda/','');
     const Boton = e.target.parentElement;
     let Producto;
     let Cantidad = 1;
     
-    if(UrlActual == `http://localhost:3000/Tienda/${ProductNombre}`  ){
+    if(UrlActual == `${UrlLocal}/Tienda/${ProductNombre}`  ){
         Producto = Boton.parentElement.parentElement.parentElement.parentElement
         Cantidad = Producto.querySelector('.CantidadCarrito').value
     }else{
