@@ -257,7 +257,6 @@ exports.FinalizarCompra = async(req, res, next) => {
         })
 
           
-    return;
     
 let DetalleOrden = ({
             Cantidad: Producto.quantity,

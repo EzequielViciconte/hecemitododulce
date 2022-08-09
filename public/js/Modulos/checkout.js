@@ -3,7 +3,7 @@ const axios = require('axios');
 const UrlLocal = window.location.origin;
 const path = window.location.pathname
 const Url = `${UrlLocal}${path}`;
-if (Url == 'http://localhost:3000/success') {
+if (Url == 'http://hecemitododulce.herokuapp.com/success') {
     const Header = document.querySelector('.Header');
     Header.remove();
     localStorage.removeItem('direccion');
