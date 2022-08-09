@@ -41,7 +41,7 @@ require('dotenv').config({ path: 'variables.env' });
 const app = express();
 
 mercadopago.configure({
-    access_token:'TEST-408376993434531-052314-851c098c3f4f195981e226677f1686e2-1128444463'
+    access_token:process.env.ACCESSTOKEN
 });
 
 
