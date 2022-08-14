@@ -96,7 +96,11 @@ module.exports = () => {
 
     // Tienda
     router.get('/Tienda', TiendaController.CrearTienda);
-    router.get('/Tienda/:Url', TiendaController.ProductoUrl);
+    router.get('/Tienda/:Url',TiendaController.ProductoUrl);
+
+    // Editar Producto 
+    router.get('/Producto/Editar/:Id',TiendaController.FormEditarProducto)
+    router.post('/Producto/Editar/:Id',TiendaController.EditarProducto)
 
     // Sobre Nosotros
     router.get('/SobreNosotros', NosotrosController.SobreNosotros);

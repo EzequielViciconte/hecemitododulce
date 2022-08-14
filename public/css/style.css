@@ -549,7 +549,18 @@
               .Imagen .Invisible {
                   display: none;
               }
+
+              .InformacionTarta{
+                position: relative;
+              }
               
+              .BtnEditarProducto{
+                position: absolute;
+                left:93%;
+                top: 0%;
+                font-size: 2rem;
+              }
+
               @media only screen and (min-width:1024px) {
                   .ContenedorProductos {
                       display: grid;
@@ -607,7 +618,13 @@
                       margin: 21% 40%;
                       z-index: 1;
                   }
+
+                  .BtnEditarProducto{
+                    top: -4%;
+                  }
               }
+
+
 
 
               /*************** Seccion Galeria ****************/

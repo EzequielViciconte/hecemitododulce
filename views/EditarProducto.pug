@@ -1,0 +1,22 @@
+extends layout
+
+block Contenido
+    section.MiCuenta 
+        h2=`Editar  ${Producto.Titulo}`
+        
+        form.default-form(method="POST")
+            div.Campo 
+                label(for="Nombre") Nombre de la Tarta:
+                input(type="text" name="NombreTarta" placeholder="Indica el nombre de la tarta" value=`${Producto.Titulo}` ) 
+            div.Campo 
+                label(for="text") Precio de la tarta:
+                input(type="text" name="Precio" placeholder="Valor de la Tarta" value=`${Producto.Precio}`)
+            
+            div.Campo 
+                label(for="Descripcion") Descripccion:
+                input(type="text" name="Descripcion" placeholder="Tu Descripcion" value=`${Producto.Descripcion}`)
+            .Campo.left 
+                    button.Boton(name='BtnCrears' type='submit' value='Actualizar Datos')
+                        span Actualizar Datos
+    
+

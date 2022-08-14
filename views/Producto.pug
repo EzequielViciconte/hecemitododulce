@@ -25,6 +25,9 @@ block Contenido
                 #ImgChica3.BackgroundImg
                     img(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}3.jpg` alt=Producto.Titulo)
             .InformacionTarta
+                if(Admin == true)
+                    a(href=`/Producto/Editar/${Producto.Id}`) 
+                        i(class="fa-solid fa-ellipsis-vertical BtnEditarProducto")
                 .PrecioNombre
                     h2.ProductoNombre.NombreTarta= Producto.Titulo
                     p.PrecioProducto.Precio $
