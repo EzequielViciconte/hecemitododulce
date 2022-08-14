@@ -25,6 +25,7 @@ block Contenido
                             option(selected disabled) Seleccione Domicilio de Entrega
                             each Direccion in Direcciones
                                 option(value=`${Direccion.id}` )=Direccion.Direccion 
+                            option(value="Agregar" class="DireccionAgregar") Agregar Nueva Direccion  
                     div.Campo 
                         label(for="Nombre") Nombre:
                         input(disabled class="Nombre" type="text" name="Nombre" placeholder="Tu Nombre" value=``)
@@ -50,14 +51,14 @@ block Contenido
                         label Codigo Postal:
                         input(disabled ype="text" class="CP" name="CodigoPostal" placeholder="Tu Codigo Postal")
 
+                    
         .DireccionAcc.AccionesCarrito
             a(href="/carrito" ) 
                 button.Boton
                     span Regresar al Carrito
-            a(href="/pasarela" id="BtnPagar") 
+            a(href="/Tipo-Envio" id="BtnSiguiente") 
                 button.Boton
-                    span Ir a Pagar
-
+                    span Elegir Tipo de Envio
 
                     
                         

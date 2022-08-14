@@ -130,6 +130,13 @@ module.exports = () => {
     );
 
 
+    //**** Tipo de Envio ****/
+    router.get('/Tipo-Envio',
+    authController.usuarioAutenticado,
+    checkoutController.TipoEnvio
+    );
+
+
     //**** Pasarela de pago ****/
     router.get('/pasarela',
     authController.usuarioAutenticado,

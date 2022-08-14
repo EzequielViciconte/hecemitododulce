@@ -84,7 +84,8 @@ function PasarOrdenBack(e) {
         Calle = Direccion.querySelector('.CartDireccion').textContent,
         CP = Direccion.querySelector('.CartCp').textContent,
         Telefono = Direccion.querySelector('.CartTelefono').textContent
-
+    const TipoEnvio = JSON.parse(localStorage.getItem('TipoEntrega'));
+    
     const arrDireccion = {
         Calle: Calle,
         CP: CP,
@@ -93,7 +94,8 @@ function PasarOrdenBack(e) {
 
     const Conjunto = {
         Productos: arrProductos,
-        Direccion: arrDireccion
+        Direccion: arrDireccion,
+        TipoEnvio
     };
 
 

@@ -1,9 +1,10 @@
 let checkout;
 const axios = require('axios');
+const TipoEnvioSelect =  document.querySelectorAll('.Radio');
 const UrlLocal = window.location.origin;
 const path = window.location.pathname
 const Url = `${UrlLocal}${path}`;
-if (Url == 'http://hecemitododulce.herokuapp.com/success') {
+if (Url == 'https://hecemitododulce.click/success') {
     const Header = document.querySelector('.Header');
     Header.remove();
     localStorage.removeItem('direccion');
@@ -27,7 +28,22 @@ if (Url == 'http://hecemitododulce.herokuapp.com/success') {
 }
 
 
+if(TipoEnvioSelect){
+TipoEnvioSelect.forEach(Radio => {
+    Radio.addEventListener('click', e => {
+        const Datos = e.target.value;
+        let Entrega = {
+            'TipoEntrega': Datos
+        }
+        añadirLocalStorage('TipoEntrega', Entrega);
+        VerificarTipoEnvio();
+    });
+});
+}
 
+
+
+/********* Direcciones  **********/
 const BotonPagar = document.querySelector('#BtnPagar')
     // Seleccionar todos los Input.
 const Nombre = document.querySelector('.Nombre');
@@ -41,7 +57,6 @@ const CP = document.querySelector('.CP');
 const Direccion = document.querySelector('.DireccionValor');
 
 
-/********* Direcciones  **********/
 if (Direccion) {
     VerificarDatos()
     Direccion.addEventListener('change', function() {
@@ -49,12 +64,12 @@ if (Direccion) {
         LlenarCamposDireccion(Seleccionado);
         VerificarDatos();
     })
-
 }
 
 
 
 // Funciones
+
 function LlenarCamposDireccion(Seleccionado) {
     axios.get('/TomarDirecciones')
         .then(response => {
@@ -82,21 +97,33 @@ function LlenarCamposDireccion(Seleccionado) {
                     CP.value = Direccios.CodigoPostal;
                     VerificarDatos();
                     añadirLocalStorage('direccion', Direccion);
-                }
+                }  
             });
         })
 
+        if(Seleccionado.value == "Agregar"){
+            location.href =`${UrlLocal}/Direcciones/Agregar`;
+        }
 
 }
 
 // Verificar que esten todos los datos completados
 function VerificarDatos() {
+    const BtnSiguiente = document.querySelector('#BtnSiguiente');
     if (Nombre.value == '' || Apellido.value == '' || Telefono.value == '' || Calle.value == '' || Numeracion.value == '' || Ciudad.value == '' || Provincia.value == '' || CP.value == '') {
-        BotonPagar.href = '';
+        BtnSiguiente.href = '';
     } else {
-        BotonPagar.href = '/pasarela';
+        BtnSiguiente.href = '/Tipo-Envio';
     }
 }
+
+function VerificarTipoEnvio() {
+    if(TipoEnvioSelect[0].checked || TipoEnvioSelect[1].checked ){
+        const BtnCaja = document.querySelector('#BtnCaja');
+        BtnCaja.href = '/pasarela';
+    }
+}
+
 
 function añadirLocalStorage(key, productos) {
     return localStorage.setItem(key, JSON.stringify(productos));

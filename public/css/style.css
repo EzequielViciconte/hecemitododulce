@@ -940,6 +940,7 @@
                   }
               }
               /*******  Pagina Principal FIN  *******/
+
               /***** Tienda *****/
               
               .ImgProducto img {
@@ -1432,6 +1433,10 @@
                 cursor: pointer;
                 width: 100%;
               }
+
+              .DireccionValor .DireccionAgregar{
+                color: #aba9a9;
+              }
               
               .IconoDir {
                   font-size: 1.8rem;
@@ -1534,7 +1539,31 @@
   
               }
 
+              /******** TIPO ENVIO *********/
+              .Envio {
+                justify-content: flex-start;
+                border: 4px solid #ff00bf;
+                border-radius: 4px;
+              }
 
+              .Envio .Informacion{
+                display: flex;
+                align-items: flex-end;
+              }
+
+              .Envio input {
+                width: 1rem;
+              }
+              
+              .Envio label {
+                padding: 1.5rem;
+                color: white;
+                font-size: 3rem;
+              }
+              .PEnvio{
+                font-size: 1rem;  
+                color: #b1b1b1;
+            }
 
               /*SobreNosotros Aparte*/
               

@@ -21,6 +21,7 @@ const Orden = db.define('Orden', {
         type: Sequelize.STRING(),
         allowNull: false,
     },
+    TipoEnvio:Sequelize.INTEGER(),
     FechaCompra: Sequelize.DATE(),
     Payment_type:{
         type:  Sequelize.STRING(),

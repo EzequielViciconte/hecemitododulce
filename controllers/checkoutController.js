@@ -8,6 +8,7 @@ const enviarEmail = require('../handlers/email');
 const PDF = require('pdfkit-construct');
 const Crypto = require('crypto');
 const fs = require('fs');
+const { Router } = require("express");
 
 
 var preference = {
@@ -59,6 +60,13 @@ exports.TomarDirecciones = async(req, res) => {
 }
 
 
+exports.TipoEnvio = (req,res) =>{
+    res.render('TipoEnvio', {
+        NombrePagina: 'Tipo Envio',
+    })
+}
+
+
 //***** Pasarela de Pago *****/
 
 exports.PasaraledaPago = (req, res) => {
@@ -70,8 +78,9 @@ exports.PasaraledaPago = (req, res) => {
 exports.mostrarCheckoutMp = async(req, res, next) => {
     const Productos = req.body.Productos;
     const Direccion = req.body.Direccion;
+    const TipoEnvio = req.body.TipoEnvio;
     
-
+    console.log(TipoEnvio.TipoEntrega);
 
 
     const Email = req.session.passport.user.Email
@@ -106,13 +115,17 @@ exports.mostrarCheckoutMp = async(req, res, next) => {
                 "zip_code": Direccion.CP
             }
         }
-    }
 
+        preference.shipments = {
+            'id': TipoEnvio.TipoEntrega
+        }
+        
+    }
     const UrlLocal = req.protocol
     preference.back_urls = {
-        "success":  `${UrlLocal}://hecemitododulce.herokuapp.com/success`,
-        "failure":  `${UrlLocal}://hecemitododulce.herokuapp.com/rejected`,
-        "pending":  `${UrlLocal}://hecemitododulce.herokuapp.com/feedback`
+        "success":  `${UrlLocal}://hecemitododulce.click/success`,
+        "failure":  `${UrlLocal}://hecemitododulce.click/rejected`,
+        "pending":  `${UrlLocal}://hecemitododulce.click/feedback`
     }
 
     if (preference.items.length == 0) {
@@ -131,6 +144,7 @@ exports.mostrarCheckoutMp = async(req, res, next) => {
 exports.FinalizarCompra = async(req, res, next) => {
     const Datos = req.query;
     const Comprador = req.user;
+    const TipoEnvio = preference.shipments.id;
 
 
 
@@ -148,6 +162,7 @@ exports.FinalizarCompra = async(req, res, next) => {
         email: Comprador.Email,
         Payment_id: Datos.payment_id,
         Status: Datos.status,
+        TipoEnvio,
         FechaCompra: new Date(),
         Payment_type: Datos.payment_type
     })
