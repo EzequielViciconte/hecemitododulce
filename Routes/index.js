@@ -109,7 +109,6 @@ module.exports = () => {
     router.get('/Contacto', ContactoController.Contacto);
 
 
-
     //********* Seccion de Compra  ********/
 
     // Carrito
@@ -157,6 +156,10 @@ module.exports = () => {
         authController.usuarioAutenticado,
         checkoutController.FinalizarCompra
     );
+
+
+    //zohoverify
+    router.get('/zohoverify/verifyforzoho.html');
 
     return router;
 }
