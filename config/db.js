@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const db = new Sequelize('ezequiel12_hecemitododulce', '277893', 'Bocala122014', {
-    host: 'mysql-ezequiel12.alwaysdata.net',
+const db = new Sequelize('heroku_2272ddedea7f0c8', process.env.HEROKUUSER, process.env.HEROKUPASS, {
+    host:process.env.HOST ,
     dialect: 'mysql',
     port: '3306',
     operatorsAliases: false,

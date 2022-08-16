@@ -158,8 +158,6 @@ module.exports = () => {
     );
 
 
-    //zohoverify
-    router.get('/zohoverify/verifyforzoho.html');
 
     return router;
 }
