@@ -26,7 +26,7 @@ exports.ProductoUrl = async(req, res, next) => {
     if (!Producto) return next();
 
     if(req.user){
-        if(req.user.Nombre == 'Ezequiel Viciconte'){
+        if(req.user.Nombre == 'Emilse Natalia Amposta'){
             Admin = true;
         }
     }
