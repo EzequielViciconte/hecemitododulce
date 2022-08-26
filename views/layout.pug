@@ -15,7 +15,7 @@ header.Header(class=Pagina)
     .Barra(class=Pagina != 'index' ? 'BarraCom' : '')
       a(href='/')
         h1 HecemiTodoDulce
-      i(class="fa-solid fa-bars MenuMostrar")
+      i(class=".fa-a MenuMostrar")
       nav.MenuNavegacion
         if(locals.usuario.id)
           include partials/nav-autenticado.pug

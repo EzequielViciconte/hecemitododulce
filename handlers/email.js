@@ -9,7 +9,10 @@ const util = require('util');
 
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL)
 
+
+
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+console.log(REFRESH_TOKEN);
 
 
 const accessToken = oAuth2Client.getAccessToken()

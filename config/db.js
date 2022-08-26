@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-
+require('dotenv').config({ path: 'variables.env' });
 const db = new Sequelize('heroku_2272ddedea7f0c8', process.env.HEROKUUSER, process.env.HEROKUPASS, {
     host:process.env.HOST ,
     dialect: 'mysql',
@@ -14,5 +14,7 @@ const db = new Sequelize('heroku_2272ddedea7f0c8', process.env.HEROKUUSER, proce
         acquire: 30000,
         idle: 10000
     }
+
 });
+
 module.exports = db;
