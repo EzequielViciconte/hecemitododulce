@@ -1566,6 +1566,7 @@
               .Envio.Informacion{
                 display: flex;
                 align-items: flex-end;
+                padding: 2rem;
               }
 
               .Envio input {
