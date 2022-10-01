@@ -13,7 +13,7 @@ block Contenido
               a.OjoProducto(href=`/Tienda/${Producto.Imagen}`)
                 i.fa.fa-eye
               a(href=`/Tienda/${Producto.Imagen}`) 
-                img.ImagenProducto(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg`)
+                img.ImagenProducto(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt=`${Producto.Titulo}`)
             .ContenidoProducto
                 p.ProductoNombre= Producto.Titulo
                 p.PrecioProducto $

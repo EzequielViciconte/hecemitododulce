@@ -21,7 +21,7 @@ block Contenido
                     each Producto in productos
                         .Producto
                             .ImagenOjo 
-                                img(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt='')
+                                img(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt=`${Producto.Imagen}`)
                                 a(class="Invisible OjoProducto" href=`/Tienda/${Producto.Imagen}`)
                                     i(class="fa fa-eye")     
                             h3= Producto.Titulo
@@ -43,12 +43,12 @@ block Contenido
             i.fa.fa-circle-xmark.CerrarGaleria
             
         .Contenedor.ContenedorImagenes 
-            img(src="/img/Tartas/LemonPie/LemonPie.jpg", alt="" class="ImagenGal")
-            img(src="/img/Tartas/TartaDeFrutilla/TartaDeFrutilla.jpg", alt="" class="ImagenGal")
-            img(src="/img/Tartas/TartaMerengue/TartaMerengue.jpg", alt="" class="ImagenGal")
-            img(src="/img/Tortas/Torta dulce y chocolate DULCE.jpg", alt="" class="ImagenGal")
-            img(src="/img/Tartas/TartaToffi/TartaToffi.jpg", alt="" class="ImagenGal")
-            img(src="/img/Tortas/Camiseta-de-argenitna-torta.jpg", alt="" class="ImagenGal")
+            img(src="/img/Tartas/LemonPie/LemonPie.jpg", alt="Lemon Pie" class="ImagenGal")
+            img(src="/img/Tartas/TartaDeFrutilla/TartaDeFrutilla.jpg", alt="Tarta de Frutilla" class="ImagenGal")
+            img(src="/img/Tartas/TartaMerengue/TartaMerengue.jpg", alt="Tarta Merengue" class="ImagenGal")
+            img(src="/img/Tortas/Torta dulce y chocolate DULCE.jpg", alt="Torta Dulce y chocolate" class="ImagenGal")
+            img(src="/img/Tartas/TartaToffi/TartaToffi.jpg", alt="Tarta Toffi" class="ImagenGal")
+            img(src="/img/Tortas/Camiseta-de-argenitna-torta.jpg", alt="Torta Argentina" class="ImagenGal")
 
 
 

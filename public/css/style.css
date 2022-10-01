@@ -1565,7 +1565,7 @@
 
                .Informacion{
                 display: flex;
-                align-items: flex-end;
+                align-items: center;
                 padding: 2rem;
               }
 
@@ -1577,10 +1577,22 @@
                 padding: 1.5rem;
                 color: white;
                 font-size: 3rem;
+                line-height: 3rem;
               }
               .PEnvio{
                 font-size: 1rem;  
                 color: #b1b1b1;
+            }
+
+
+
+            @media only screen and (min-width:1024px){
+                
+               .Informacion{
+                display: flex;
+                align-items: flex-end;
+                padding: 2rem;
+              }
             }
 
               /*SobreNosotros Aparte*/
