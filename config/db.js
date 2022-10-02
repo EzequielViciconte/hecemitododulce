@@ -14,7 +14,12 @@ const db = new Sequelize('heroku_2272ddedea7f0c8', process.env.HEROKUUSER, proce
         acquire: 30000,
         idle: 10000
     }
-
 });
+
+db.sync().then(function(){
+    console.log('Conexion Correecta Db');
+},function(err){
+    console.log(err);
+})
 
 module.exports = db;
