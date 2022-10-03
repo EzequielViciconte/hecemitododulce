@@ -11,15 +11,10 @@ const db = new Sequelize('heroku_2272ddedea7f0c8', process.env.HEROKUUSER, proce
     pool: {
         max: 5,
         min: 0,
-        acquire: 30000,
-        idle: 10000
+        acquire: 60000,
+        idle: 30000
     }
 });
 
-db.sync().then(function(){
-    console.log('Conexion Correecta Db');
-},function(err){
-    console.log(err);
-})
 
 module.exports = db;
